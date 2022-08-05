@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    #carouselExampleControls {
+        width: 500px;
+        height: 360px;
+    }
+</style>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="Imagenes/separadores.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="Imagenes/separadores.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="Imagenes/separadores.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="row">
+    <style type="text/css">
+        input[type="submit"] {
+            color: #D29224;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #Prom {
+            border-radius: 1em;
+            margin-top: 0px;
+            background-color: #33DAFF;
+        }
+    </style>
+    <div class="col-md-12" id=" Prom">
+        <font face="calibri">
+            <h2>Promociones</h2>
+        </font>
+
+        Conoce acerca del catalogo de la papeleria que tenemos para ti.
+        <form action="" method="post">
+            <input type="submit" value="Ver Ofertas" />
+        </form>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Productos</h1>
+                <h2>Folders</h2>
+                <p>
+                    <img src="Imagenes/folder.jpg" class="d-block w-100" alt="...">
+                </p>
+            </div>
+            <div class="col-md-12">
+                <h2>Separadores</h2>
+                <p>
+                    <img src="Imagenes/separadores.jpg" alt="...">
+                </p>
+            </div>
+            <div class="col-md-12">
+                <h2>Cartucheras</h2>
+                <p>
+                    <img src="Imagenes/cartuchera.jpg" class="d-block w-100" alt="...">
+                </p>
+            </div>
+        </div>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDTiendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="Adm_Id" />
+          </Key>
+          <Property Name="Adm_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Adm_nom" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adm_ape" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adm_dir" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adm_tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adm_cor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adm_usu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adm_con" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Cli_id" />
+          </Key>
+          <Property Name="Cli_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Cli_Nom" Type="nvarchar(max)" />
+          <Property Name="Cli_Dir" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cli_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cli_Cor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cli_Usu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cli_Con" Type="nvarchar(max)" />
+          <Property Name="Cli_Est" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="Fac_id" />
+          </Key>
+          <Property Name="Fac_id" Type="int" Nullable="false" />
+          <Property Name="Fac_vTot" Type="int" />
+          <Property Name="Fac_Fecha" Type="date" />
+          <Property Name="Fac_IdCliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fac_IdProducto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fac_Comentario" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Prod_Id" />
+          </Key>
+          <Property Name="Prod_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Prod_Uni" Type="int" />
+          <Property Name="Prod_Precio" Type="int" />
+          <Property Name="Prod_Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prod_Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="Prov_nit" />
+          </Key>
+          <Property Name="Prov_nit" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Prov_Nom" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prov_Ape" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nom_Emp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prov_Dir" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prov_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prov_Cor" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BDTiendaModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDTiendaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="Adm_Id" />
+          </Key>
+          <Property Name="Adm_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Adm_nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_ape" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_dir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_usu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_con" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Cli_id" />
+          </Key>
+          <Property Name="Cli_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Cli_Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cli_Dir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cli_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cli_Cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cli_Usu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cli_Con" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cli_Est" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="Fac_id" />
+          </Key>
+          <Property Name="Fac_id" Type="Int32" Nullable="false" />
+          <Property Name="Fac_vTot" Type="Int32" />
+          <Property Name="Fac_Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Fac_IdCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fac_IdProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fac_Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Prod_Id" />
+          </Key>
+          <Property Name="Prod_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Prod_Uni" Type="Int32" />
+          <Property Name="Prod_Precio" Type="Int32" />
+          <Property Name="Prod_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prod_Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="Prov_nit" />
+          </Key>
+          <Property Name="Prov_nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Prov_Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prov_Ape" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nom_Emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prov_Dir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prov_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prov_Cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="BDTiendaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDTiendaModelStoreContainer" CdmEntityContainer="BDTiendaEntities">
+          <EntitySetMapping Name="Administrador">
+            <EntityTypeMapping TypeName="BDTiendaModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="Adm_Id" ColumnName="Adm_Id" />
+                <ScalarProperty Name="Adm_nom" ColumnName="Adm_nom" />
+                <ScalarProperty Name="Adm_ape" ColumnName="Adm_ape" />
+                <ScalarProperty Name="Adm_dir" ColumnName="Adm_dir" />
+                <ScalarProperty Name="Adm_tel" ColumnName="Adm_tel" />
+                <ScalarProperty Name="Adm_cor" ColumnName="Adm_cor" />
+                <ScalarProperty Name="Adm_usu" ColumnName="Adm_usu" />
+                <ScalarProperty Name="Adm_con" ColumnName="Adm_con" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="BDTiendaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Cli_id" ColumnName="Cli_id" />
+                <ScalarProperty Name="Cli_Nom" ColumnName="Cli_Nom" />
+                <ScalarProperty Name="Cli_Dir" ColumnName="Cli_Dir" />
+                <ScalarProperty Name="Cli_Tel" ColumnName="Cli_Tel" />
+                <ScalarProperty Name="Cli_Cor" ColumnName="Cli_Cor" />
+                <ScalarProperty Name="Cli_Usu" ColumnName="Cli_Usu" />
+                <ScalarProperty Name="Cli_Con" ColumnName="Cli_Con" />
+                <ScalarProperty Name="Cli_Est" ColumnName="Cli_Est" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Factura">
+            <EntityTypeMapping TypeName="BDTiendaModel.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="Fac_id" ColumnName="Fac_id" />
+                <ScalarProperty Name="Fac_vTot" ColumnName="Fac_vTot" />
+                <ScalarProperty Name="Fac_Fecha" ColumnName="Fac_Fecha" />
+                <ScalarProperty Name="Fac_IdCliente" ColumnName="Fac_IdCliente" />
+                <ScalarProperty Name="Fac_IdProducto" ColumnName="Fac_IdProducto" />
+                <ScalarProperty Name="Fac_Comentario" ColumnName="Fac_Comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="BDTiendaModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Prod_Id" ColumnName="Prod_Id" />
+                <ScalarProperty Name="Prod_Uni" ColumnName="Prod_Uni" />
+                <ScalarProperty Name="Prod_Precio" ColumnName="Prod_Precio" />
+                <ScalarProperty Name="Prod_Nombre" ColumnName="Prod_Nombre" />
+                <ScalarProperty Name="Prod_Descripcion" ColumnName="Prod_Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedor">
+            <EntityTypeMapping TypeName="BDTiendaModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedor">
+                <ScalarProperty Name="Prov_nit" ColumnName="Prov_nit" />
+                <ScalarProperty Name="Prov_Nom" ColumnName="Prov_Nom" />
+                <ScalarProperty Name="Prov_Ape" ColumnName="Prov_Ape" />
+                <ScalarProperty Name="Nom_Emp" ColumnName="Nom_Emp" />
+                <ScalarProperty Name="Prov_Dir" ColumnName="Prov_Dir" />
+                <ScalarProperty Name="Prov_Tel" ColumnName="Prov_Tel" />
+                <ScalarProperty Name="Prov_Cor" ColumnName="Prov_Cor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

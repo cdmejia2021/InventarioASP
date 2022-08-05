@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Inventario2.Models.Proveedor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Principal proveedores</h2>
+
+<p>
+    @Html.ActionLink("Agregar nuevo proveedor", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Prov_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prov_Ape)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_Emp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prov_Dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prov_Tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prov_Cor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prov_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prov_Ape)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_Emp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prov_Dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prov_Tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prov_Cor)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Prov_nit }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Prov_nit }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Prov_nit })
+        </td>
+    </tr>
+}
+
+</table>

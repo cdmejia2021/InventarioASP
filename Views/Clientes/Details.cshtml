@@ -1,0 +1,74 @@
+﻿@model Inventario2.Models.Cliente
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Dir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Dir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Cor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Cor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Usu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Usu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cli_Est)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cli_Est)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Cli_id }) |
+    @Html.ActionLink("Regresar al menu", "Index")
+</p>

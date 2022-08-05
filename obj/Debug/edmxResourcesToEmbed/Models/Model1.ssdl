@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDTiendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="Adm_Id" />
+    </Key>
+    <Property Name="Adm_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Adm_nom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adm_ape" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adm_dir" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adm_tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adm_cor" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adm_usu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adm_con" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Cli_id" />
+    </Key>
+    <Property Name="Cli_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Cli_Nom" Type="nvarchar(max)" />
+    <Property Name="Cli_Dir" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cli_Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cli_Cor" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cli_Usu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cli_Con" Type="nvarchar(max)" />
+    <Property Name="Cli_Est" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Fac_id" />
+    </Key>
+    <Property Name="Fac_id" Type="int" Nullable="false" />
+    <Property Name="Fac_vTot" Type="int" />
+    <Property Name="Fac_Fecha" Type="date" />
+    <Property Name="Fac_IdCliente" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fac_IdProducto" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fac_Comentario" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Prod_Id" />
+    </Key>
+    <Property Name="Prod_Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Prod_Uni" Type="int" />
+    <Property Name="Prod_Precio" Type="int" />
+    <Property Name="Prod_Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prod_Descripcion" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Prov_nit" />
+    </Key>
+    <Property Name="Prov_nit" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Prov_Nom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prov_Ape" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nom_Emp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prov_Dir" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prov_Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prov_Cor" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="BDTiendaModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

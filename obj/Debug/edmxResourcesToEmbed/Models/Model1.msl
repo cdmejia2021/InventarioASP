@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDTiendaModelStoreContainer" CdmEntityContainer="BDTiendaEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="BDTiendaModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="Adm_Id" ColumnName="Adm_Id" />
+          <ScalarProperty Name="Adm_nom" ColumnName="Adm_nom" />
+          <ScalarProperty Name="Adm_ape" ColumnName="Adm_ape" />
+          <ScalarProperty Name="Adm_dir" ColumnName="Adm_dir" />
+          <ScalarProperty Name="Adm_tel" ColumnName="Adm_tel" />
+          <ScalarProperty Name="Adm_cor" ColumnName="Adm_cor" />
+          <ScalarProperty Name="Adm_usu" ColumnName="Adm_usu" />
+          <ScalarProperty Name="Adm_con" ColumnName="Adm_con" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="BDTiendaModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Cli_id" ColumnName="Cli_id" />
+          <ScalarProperty Name="Cli_Nom" ColumnName="Cli_Nom" />
+          <ScalarProperty Name="Cli_Dir" ColumnName="Cli_Dir" />
+          <ScalarProperty Name="Cli_Tel" ColumnName="Cli_Tel" />
+          <ScalarProperty Name="Cli_Cor" ColumnName="Cli_Cor" />
+          <ScalarProperty Name="Cli_Usu" ColumnName="Cli_Usu" />
+          <ScalarProperty Name="Cli_Con" ColumnName="Cli_Con" />
+          <ScalarProperty Name="Cli_Est" ColumnName="Cli_Est" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="BDTiendaModel.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="Fac_id" ColumnName="Fac_id" />
+          <ScalarProperty Name="Fac_vTot" ColumnName="Fac_vTot" />
+          <ScalarProperty Name="Fac_Fecha" ColumnName="Fac_Fecha" />
+          <ScalarProperty Name="Fac_IdCliente" ColumnName="Fac_IdCliente" />
+          <ScalarProperty Name="Fac_IdProducto" ColumnName="Fac_IdProducto" />
+          <ScalarProperty Name="Fac_Comentario" ColumnName="Fac_Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="BDTiendaModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="Prod_Id" ColumnName="Prod_Id" />
+          <ScalarProperty Name="Prod_Uni" ColumnName="Prod_Uni" />
+          <ScalarProperty Name="Prod_Precio" ColumnName="Prod_Precio" />
+          <ScalarProperty Name="Prod_Nombre" ColumnName="Prod_Nombre" />
+          <ScalarProperty Name="Prod_Descripcion" ColumnName="Prod_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="BDTiendaModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Prov_nit" ColumnName="Prov_nit" />
+          <ScalarProperty Name="Prov_Nom" ColumnName="Prov_Nom" />
+          <ScalarProperty Name="Prov_Ape" ColumnName="Prov_Ape" />
+          <ScalarProperty Name="Nom_Emp" ColumnName="Nom_Emp" />
+          <ScalarProperty Name="Prov_Dir" ColumnName="Prov_Dir" />
+          <ScalarProperty Name="Prov_Tel" ColumnName="Prov_Tel" />
+          <ScalarProperty Name="Prov_Cor" ColumnName="Prov_Cor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

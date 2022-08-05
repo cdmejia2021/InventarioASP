@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDTiendaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="Adm_Id" />
+    </Key>
+    <Property Name="Adm_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Adm_nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adm_ape" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adm_dir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adm_tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adm_cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adm_usu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adm_con" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Cli_id" />
+    </Key>
+    <Property Name="Cli_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Cli_Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cli_Dir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cli_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cli_Cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cli_Usu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cli_Con" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cli_Est" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Fac_id" />
+    </Key>
+    <Property Name="Fac_id" Type="Int32" Nullable="false" />
+    <Property Name="Fac_vTot" Type="Int32" />
+    <Property Name="Fac_Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Fac_IdCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fac_IdProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fac_Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Prod_Id" />
+    </Key>
+    <Property Name="Prod_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Prod_Uni" Type="Int32" />
+    <Property Name="Prod_Precio" Type="Int32" />
+    <Property Name="Prod_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prod_Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Prov_nit" />
+    </Key>
+    <Property Name="Prov_nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Prov_Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prov_Ape" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom_Emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prov_Dir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prov_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prov_Cor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BDTiendaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+  </EntityContainer>
+</Schema>
